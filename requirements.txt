@@ -1,6 +1,2 @@
 ## Please list additional packages with version numbers
-matplotlib
-pandas
-numpy
-keras
 
