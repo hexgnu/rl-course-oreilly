@@ -3,6 +3,8 @@ import numpy as np
 import datetime as dt
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+from IPython.display import clear_output
 
 from util import get_data, create_df_benchmark, create_df_trades
 import QLearner as ql
@@ -243,6 +245,7 @@ class StrategyLearner(object):
                 if self.has_converged(cum_returns):
                     break
         if self.verbose:
+            sns.heatmap(self.q_learner.Q, cmap='Blues')
             plt.plot(cum_returns)
             plt.xlabel("Epoch")
             plt.ylabel("Cumulative return (%)")
